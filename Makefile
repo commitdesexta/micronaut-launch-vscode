@@ -12,7 +12,8 @@ package:
 
 clean:
 	rm -rf out
-	rm -f *.vsix
+	rm -rf node_modules
+	rm -rf *.vsix
 run:
 	codium --install-extension micronaut-launch-vscode-0.0.1.vsix
 rebuild: clean install compile
