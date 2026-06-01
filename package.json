@@ -5,14 +5,14 @@
   "version": "0.0.2",
   "repository": "https://github.com/commitdesexta/micronaut-launch-vscode.git",
   "publisher": "commitdesexta",
-  "icon": "images/micronaut_stacked_white.png"
+  "icon": "images/micronaut_stacked_white.png",
   "engines": {
     "vscode": "^1.97.2"
   },
   {
-  "galleryBanner": {
+    "galleryBanner": {
       "color": "#af1338",
-      "theme": "dark"
+      "theme": "dark",
     }
   },
   "categories": [
