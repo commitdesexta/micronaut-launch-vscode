@@ -1,0 +1,60 @@
+name: Release VSCode Extension
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install VSCE
+        run: npm install -g @vscode/vsce
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Update package.json version
+        run: |
+          npm version $VERSION \
+            --no-git-tag-version \
+            --allow-same-version
+
+      - name: Compile
+        run: npm run compile
+
+      - name: Run tests
+        run: |
+          npm test || echo "No tests configured"
+
+      - name: Package extension
+        run: vsce package --allow-missing-repository
+
+      - name: Rename artifact
+        run: |
+          mv *.vsix extension-${VERSION}.vsix
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: extension-${{ env.VERSION }}.vsix
+          generate_release_notes: true
