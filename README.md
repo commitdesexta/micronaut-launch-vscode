@@ -1,3 +1,4 @@
+[![Release VSCode Extension](https://github.com/commitdesexta/micronaut-launch-vscode/actions/workflows/release.yml/badge.svg)](https://github.com/commitdesexta/micronaut-launch-vscode/actions/workflows/release.yml)
 # Micronaut Launch for VS Code/VSCodium
 
 Create Micronaut projects directly from VS Code and VSCodium using the Micronaut Launch API.
