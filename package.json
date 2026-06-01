@@ -9,11 +9,9 @@
   "engines": {
     "vscode": "^1.97.2"
   },
-  {
-    "galleryBanner": {
-      "color": "#af1338",
-      "theme": "dark",
-    }
+  "galleryBanner": {
+    "color": "#af1338",
+    "theme": "dark"
   },
   "categories": [
     "Other"
