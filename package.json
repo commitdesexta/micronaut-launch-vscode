@@ -2,7 +2,7 @@
   "name": "micronaut-launch-vscode",
   "displayName": "Micronaut Launch VSCode",
   "description": "Create Micronaut Project inside VS Code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "https://github.com/commitdesexta/micronaut-launch-vscode.git",
   "publisher": "commitdesexta",
   "icon": "images/micronaut_stacked_white.png"
